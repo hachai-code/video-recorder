@@ -12,6 +12,7 @@ A small native macOS screen recorder. Pick a window or an app with the system pi
 - Microphone audio, plus optional audio from the captured app as a second track
 - 3-2-1 countdown, Dock window and menu-bar controls
 - Recordings stay playable up to the last 2 seconds if the app quits mid-recording
+- YouTube-ready output: H.264 High profile, up to 1080p at 30 fps, ~8 Mbps at 1080p (about 3.6 GB per hour), BT.709 color, AAC audio at 48 kHz
 
 ## Requirements
 

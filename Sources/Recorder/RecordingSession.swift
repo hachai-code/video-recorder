@@ -25,7 +25,7 @@ final class RecordingSession: NSObject, SCStreamOutput, SCStreamDelegate, @unche
         let configuration = SCStreamConfiguration()
         configuration.width = Int(size.width)
         configuration.height = Int(size.height)
-        configuration.minimumFrameInterval = CMTime(value: 1, timescale: 60)
+        configuration.minimumFrameInterval = CMTime(value: 1, timescale: 30)
         configuration.pixelFormat = kCVPixelFormatType_32BGRA
         configuration.showsCursor = true
         configuration.capturesAudio = options.appAudio

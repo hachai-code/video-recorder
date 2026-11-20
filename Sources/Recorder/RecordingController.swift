@@ -1,5 +1,6 @@
 import AppKit
 import AVFoundation
+import OSLog
 
 @MainActor
 @Observable
@@ -63,6 +64,7 @@ final class RecordingController {
     }
 
     private func present(_ error: Error) {
+        Logger().error("\(String(describing: error), privacy: .public)")
         NSApp.activate()
         NSAlert(error: error).runModal()
     }

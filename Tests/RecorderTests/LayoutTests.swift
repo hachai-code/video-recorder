@@ -8,7 +8,9 @@ import CoreGraphics
     #expect(bubbleRect(side: 100, corner: .topRight, in: bounds, margin: 10) == CGRect(x: 890, y: 390, width: 100, height: 100))
 }
 
-@Test func videoSizeIsEvenAndCappedAt4K() {
+@Test func videoSizeIsEvenAndCappedAt1080p() {
     #expect(fittedVideoSize(CGSize(width: 1281, height: 721)) == CGSize(width: 1280, height: 720))
-    #expect(fittedVideoSize(CGSize(width: 5120, height: 2880)) == CGSize(width: 3840, height: 2160))
+    #expect(fittedVideoSize(CGSize(width: 5120, height: 2880)) == CGSize(width: 1920, height: 1080))
+    #expect(fittedVideoSize(CGSize(width: 2832, height: 1618)) == CGSize(width: 1890, height: 1080))
+    #expect(fittedVideoSize(CGSize(width: 1618, height: 2832)) == CGSize(width: 616, height: 1080))
 }

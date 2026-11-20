@@ -28,6 +28,18 @@ final class MovieWriter {
             AVVideoCodecKey: AVVideoCodecType.h264,
             AVVideoWidthKey: Int(size.width),
             AVVideoHeightKey: Int(size.height),
+            AVVideoCompressionPropertiesKey: [
+                AVVideoAllowFrameReorderingKey: false,
+                AVVideoAverageBitRateKey: Int(size.width * size.height) * 4,
+                AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel,
+                AVVideoH264EntropyModeKey: AVVideoH264EntropyModeCABAC,
+                AVVideoMaxKeyFrameIntervalDurationKey: 2,
+            ],
+            AVVideoColorPropertiesKey: [
+                AVVideoColorPrimariesKey: AVVideoColorPrimaries_ITU_R_709_2,
+                AVVideoTransferFunctionKey: AVVideoTransferFunction_ITU_R_709_2,
+                AVVideoYCbCrMatrixKey: AVVideoYCbCrMatrix_ITU_R_709_2,
+            ],
         ])
         video.expectsMediaDataInRealTime = true
         adaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: video, sourcePixelBufferAttributes: [

@@ -50,8 +50,8 @@ func bubbleRect(side: CGFloat, corner: Corner, in bounds: CGRect, margin: CGFloa
     )
 }
 
-func fittedVideoSize(_ size: CGSize, within limit: CGSize = CGSize(width: 3840, height: 2160)) -> CGSize {
+func fittedVideoSize(_ size: CGSize, within limit: CGSize = CGSize(width: 1920, height: 1080)) -> CGSize {
     let scale = min(1, limit.width / size.width, limit.height / size.height)
-    func even(_ value: CGFloat) -> CGFloat { CGFloat(Int(value * scale) / 2 * 2) }
+    func even(_ value: CGFloat) -> CGFloat { CGFloat(Int((value * scale).rounded()) / 2 * 2) }
     return CGSize(width: even(size.width), height: even(size.height))
 }
